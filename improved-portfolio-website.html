@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaswanth Kellampalli | Cybersecurity Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #000;
+            color: #0f0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        header {
+            padding: 20px 0;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #0f0;
+            position: sticky;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #ff3e00;
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .menu li {
+            margin-left: 30px;
+        }
+
+        .menu a {
+            color: #0f0;
+            text-decoration: none;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+
+        .menu a:hover {
+            color: #ff3e00;
+        }
+
+        .menu a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ff3e00;
+            transition: width 0.3s;
+        }
+
+        .menu a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 5px #0f0;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .cta-btn {
+            padding: 12px 24px;
+            background-color: transparent;
+            border: 2px solid #0f0;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .cta-btn:hover {
+            background-color: #0f0;
+            color: #000;
+        }
+
+        .services {
+            padding: 50px 0;
+        }
+
+        .section-title {
+            font-size: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #0f0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            border: 1px solid #0f0;
+            padding: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 255, 0, 0.2);
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .service-card a {
+            color: #ff3e00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact {
+            padding: 50px 0;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: #111;
+            border: 1px solid #0f0;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            padding: 12px 24px;
+            background-color: #0f0;
+            border: none;
+            color: #000;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #ff3e00;
+            color: #fff;
+        }
+
+        footer {
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid #0f0;
+            margin-top: 50px;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-link {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid #0f0;
+            border-radius: 50%;
+            color: #0f0;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background-color: #0f0;
+            color: #000;
+        }
+
+        .copyright {
+            font-size: 14px;
+        }
+
+        .matrix-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Terminal animation */
+        .terminal-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: opacity 1s ease-out;
+        }
+
+        .terminal {
+            width: 600px;
+            height: 400px;
+            background-color: #000;
+            border: 2px solid #0f0;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            color: #0f0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .terminal-text {
+            margin: 0;
+            white-space: pre-wrap;
+            line-height: 1.5;
+        }
+
+        .blinking-cursor {
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background-color: #0f0;
+            animation: blink 1s infinite;
+            vertical-align: bottom;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Link hover animation */
+        .menu a:hover {
+            animation: glitch 0.3s linear;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        /* Contact Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.4s;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0}
+            to {opacity: 1}
+        }
+
+        .modal-content {
+            background-color: #111;
+            margin: 10% auto;
+            padding: 30px;
+            border: 2px solid #0f0;
+            width: 70%;
+            max-width: 600px;
+            position: relative;
+            animation: slideDown 0.5s;
+        }
+
+        @keyframes slideDown {
+            from {transform: translateY(-50px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+
+        .close {
+            color: #0f0;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #ff3e00;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: #0f0;
+            border-bottom: 1px solid #0f0;
+            padding-bottom: 10px;
+        }
+
+        .contact-item {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+
+        .contact-item i {
+            margin-right: 10px;
+            color: #ff3e00;
+        }
+
+        .contact-item a {
+            color: #0f0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #ff3e00;
+        }
+
+        .certifications {
+            margin-top: 30px;
+        }
+
+        .certifications h3 {
+            margin-bottom: 20px;
+            color: #0f0;
+            border-bottom: 1px solid #0f0;
+            padding-bottom: 10px;
+        }
+
+        .certification-item {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .certification-item::before {
+            content: "►";
+            position: absolute;
+            left: 0;
+            color: #ff3e00;
+        }
+        
+        /* Skills section */
+        .skills {
+            padding: 50px 0;
+        }
+        
+        .skill-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .skill-category {
+            border: 1px solid #0f0;
+            padding: 20px;
+        }
+        
+        .skill-category h3 {
+            margin-bottom: 15px;
+            color: #ff3e00;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .skill-list li::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: #0f0;
+        }
+        
+        /* Experience section */
+        .experience {
+            padding: 50px 0;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #0f0;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #000;
+            border: 2px solid #0f0;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -10px;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: #111;
+            border: 1px solid #0f0;
+            position: relative;
+        }
+        
+        .timeline-content h3 {
+            margin-bottom: 10px;
+            color: #ff3e00;
+        }
+        
+        .timeline-content h4 {
+            margin-bottom: 10px;
+            color: #0f0;
+        }
+        
+        .timeline-content .date {
+            color: #fff;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-content ul {
+            list-style: none;
+        }
+        
+        .timeline-content ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .timeline-content ul li::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: #0f0;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .left::after, .right::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Matrix animation canvas -->
+    <canvas class="matrix-animation" id="matrixCanvas"></canvas>
+
+    <!-- Terminal loading screen -->
+    <div class="terminal-container" id="terminal">
+        <div class="terminal">
+            <p class="terminal-text" id="terminalText"></p>
+            <span class="blinking-cursor"></span>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 class="section-title">CONTACT DETAILS</h2>
+            <div class="contact-info">
+                <h3>REACH OUT TO ME</h3>
+                <div class="contact-item">
+                    <i>📧</i>
+                    <a href="mailto:connectwithjash@gmail.com">connectwithjash@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i>📱</i>
+                    <a href="tel:+14753519995">+1 (475)-351-9995</a>
+                </div>
+                <div class="contact-item">
+                    <i>📍</i>
+                    <span>Austin, Texas</span>
+                </div>
+                <div class="contact-item">
+                    <i>💼</i>
+                    <a href="https://www.linkedin.com/in/jaswanth-k-l/" target="_blank">LinkedIn: jaswanth-k-l</a>
+                </div>
+            </div>
+            <div class="certifications">
+                <h3>CERTIFICATIONS</h3>
+                <div class="certification-item">Certified Ethical Hacker (CEH) Practical</div>
+                <div class="certification-item">AWS Certified Security – Specialty</div>
+                <div class="certification-item">Microsoft Certified: Security Operations Analyst Associate</div>
+                <div class="certification-item">Microsoft Certified: Cybersecurity Architect Expert (MCCAE)</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">JASH<span>SEC</span></div>
+                <ul class="menu">
+                    <li><a href="#home" data-text="HOME">HOME</a></li>
+                    <li><a href="#services" data-text="SERVICES">SERVICES</a></li>
+                    <li><a href="#skills" data-text="SKILLS">SKILLS</a></li>
+                    <li><a href="#experience" data-text="EXPERIENCE">EXPERIENCE</a></li>
+                    <li><a href="#blog" data-text="BLOG">BLOG</a></li>
+                    <li><a href="#contact" data-text="CONTACT">CONTACT</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="hero" id="home">
+            <h1>LAKSHMI JASWANTH KELLAMPALLI</h1>
+            <p>Cybersecurity Engineer with 4+ years of experience specializing in infrastructure security, incident response, and penetration testing. AWS Security Specialist and Certified Ethical Hacker.</p>
+            <div class="cta-buttons">
+                <button id="contactBtn" class="cta-btn">View My Details</button>
+                <a href="#services" class="cta-btn">Explore My Expertise</a>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <h2 class="section-title">EXPERTISE</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>SOC Monitoring & Incident Response</h3>
+                    <p>Expert in real-time SOC monitoring, alert analysis, and incident response with comprehensive SIEM implementation experience including QRadar and Splunk.</p>
+                    <a href="#contact">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <h3>AWS Security</h3>
+                    <p>Specialized in AWS Security Hub, Guard Duty, IAM configuration, and implementing AWS security best practices for cloud environments.</p>
+                    <a href="#contact">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <h3>Penetration Testing</h3>
+                    <p>Skilled in vulnerability assessment, penetration testing, and implementing security hardening across network infrastructure, applications, and endpoints.</p>
+                    <a href="#contact">Learn More →</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="skills" id="skills">
+            <h2 class="section-title">SKILLS</h2>
+            <div class="skill-categories">
+                <div class="skill-category">
+                    <h3>Cybersecurity</h3>
+                    <ul class="skill-list">
+                        <li>Real-time SOC monitoring</li>
+                        <li>Incident response</li>
+                        <li>Penetration testing</li>
+                        <li>Vulnerability management</li>
+                        <li>Risk assessment</li>
+                        <li>Python scripting for automation</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>AWS Security</h3>
+                    <ul class="skill-list">
+                        <li>AWS Security Hub (CSPM)</li>
+                        <li>AWS Guard Duty</li>
+                        <li>IAM (Identity and Access Management)</li>
+                        <li>Secrets Manager</li>
+                        <li>AWS Inspector & Config</li>
+                        <li>Security best practices</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Security Tools</h3>
+                    <ul class="skill-list">
+                        <li>SIEM: Splunk, QRadar</li>
+                        <li>EDR: CrowdStrike Falcon</li>
+                        <li>Network: Wireshark, Snort, Cisco Firepower</li>
+                        <li>Pentesting: Metasploit, Burp Suite, Nmap</li>
+                        <li>Vulnerability: Nessus, Qualys, OpenVAS</li>
+                        <li>Microsoft: Defender, Sentinel</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="experience" id="experience">
+            <h2 class="section-title">EXPERIENCE</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>NBC Universal</h3>
+                        <h4>Cyber Security Engineer</h4>
+                        <div class="date">August 2023 - Present</div>
+                        <ul>
+                            <li>Led SOC deployment of SIEM, EDR, Firewalls, reducing incident response times by 20%</li>
+                            <li>Implemented DLP policies supporting Gen AI initiatives</li>
+                            <li>Reduced cybersecurity incidents by 15% through secure system baseline configurations</li>
+                            <li>Decreased high-risk vulnerabilities by 30% through vulnerability scanning and penetration testing</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Kewlett Digi Labs</h3>
+                        <h4>Cyber Security Engineer</h4>
+                        <div class="date">March 2020 - July 2022</div>
+                        <ul>
+                            <li>Improved incident resolution time by 25% utilizing AWS CloudTrail for comprehensive audit logs analysis</li>
+                            <li>Conducted network vulnerability assessments ensuring compliance with security standards</li>
+                            <li>Implemented DLP policies with comprehensive documentation</li>
+                            <li>Reduced network downtime by 25% through collaborative TCP/IP troubleshooting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog" id="blog">
+            <h2 class="section-title">LATEST INSIGHTS</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>AWS Security Best Practices</h3>
+                    <p>Exploring essential AWS security configurations and services like Security Hub, GuardDuty, and IAM best practices for cloud environments.</p>
+                    <a href="https://medium.com/@connectwithjash" target="_blank">Read on Medium →</a>
+                </div>
+                <div class="service-card">
+                    <h3>Modern SOC Implementation</h3>
+                    <p>Building an effective Security Operations Center with SIEM tools, automation, and integration for rapid incident response.</p>
+                    <a href="https://medium.com/@connectwithjash" target="_blank">Read on Medium →</a>
+                </div>
+                <div class="service-card">
+                    <h3>DLP for AI Environments</h3>
+                    <p>Strategies for implementing Data Loss Prevention in AI-driven ecosystems to protect sensitive information.</p>
+                    <a href="https://medium.com/@connectwithjash" target="_blank">Read on Medium →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2 class="section-title">GET IN TOUCH</h2>
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </div>
+        </section>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/jaswanth-k-l/" target="_blank" class="social-link">Li</a>
+                <a href="https://twitter.com/jashsecurity" target="_blank" class="social-link">Tw</a>
+                <a href="https://github.com/jaswanthcybersec" target="_blank" class="social-link">Gh</a>
+                <a href="https://medium.com/@connectwithjash" target="_blank" class="social-link">Me</a>
+            </div>
+            <p class="copyright">© 2025 Lakshmi Jaswanth Kellampalli. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Matrix animation
+        const canvas = document.getElementById('matrixCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const columns = Math.floor(canvas.width / 20);
+        const drops = [];
+
+        for (let i = 0; i < columns; i++) {
+            drops[i] = Math.floor(Math.random() * canvas.height);
+        }
+
+        const matrix = () => {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0f0';
+            ctx.font = '15px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = String.fromCharCode(Math.floor(Math.random() * 128));
+                ctx.fillText(text, i * 20, drops[i] * 20);
+
+                if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        };
+
+        // Terminal animation
+        const terminalText = document.getElementById('terminalText');
+        const terminal = document.getElementById('terminal');
+        const text = [
+            "$ Initializing system...",
+            "$ Loading security protocols...",
+            "$ Authenticating user...",
+            "$ Running security scan...",
+            "$ Access granted. Welcome to Jaswanth's portfolio."
+        ];
+
+        let line = 0;
+        let char = 0;
+        let typingInterval;
+
+        const typeWriter = () => {
+            if (line < text.length) {
+                if (char < text[line].length) {
+                    terminalText.innerHTML += text[line].charAt(char);
+                    char++;
+                } else {
+                    terminalText.innerHTML += "<br>";
+                    line++;
+                    char = 0;
+                    if (line === text.length) {
+                        setTimeout(() => {
+                            terminal.style.opacity = '0';
+                            setTimeout(() => {
+                                terminal.style.display = 'none';
+                            }, 1000);
+                        }, 1000);
+                    }
+                }
+            }
+        };
+
+        typingInterval = setInterval(typeWriter, 50);
+
+        // Contact Modal
+        const modal = document.getElementById("contactModal");
+        const btn = document.getElementById("contactBtn");
+        const span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Matrix animation interval
+        setInterval(matrix, 50);
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Resize canvas on window resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+        
+        // Form submission event
+        document.querySelector('.submit-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            if (name && email) {
+                alert("Thank you for your message! I'll get back to you soon.");
+                document.getElementById('name').value = '';
+              document.getElementById('email').value = '';
+                document.getElementById('subject').value = '';
+                document.getElementById('message').value = '';
+            } else {
+                alert("Please fill in required fields.");
+            }
+        });
+        
+        // Scroll animation for elements
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        // Apply animation to services and blog cards
+        document.querySelectorAll('.service-card, .skill-category, .timeline-item').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(element);
+        });
+        
+        // Highlight active section in navigation
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.menu a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Add active class style
+        const style = document.createElement('style');
+        style.textContent = `
+            .menu a.active {
+                color: #ff3e00;
+            }
+            .menu a.active::after {
+                width: 100%;
+                background-color: #ff3e00;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
+  
